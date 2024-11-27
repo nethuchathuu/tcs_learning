@@ -3,43 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TCS learning</title>
-    <link rel="Stylesheet" href="/views/Style.css">
+    <title>TCS Learning</title>
+    <link rel="stylesheet" href="/views/Style.css">
     <script src="Script.js" defer></script>
 </head>
 <body>
     <div class="work1">
+        <!-- Logo Section -->
         <div class="work2">
-            <img src="../views/logo1 - Copy.jpeg" alt="" class="logo">
+            <img src="../views/logo1 - Copy.jpeg" alt="TCS Learning Logo" class="logo">
+        </div>
+
+        <!-- Welcome Text -->
         <div class="text1">
-            <h1>Welcome To TCS learning</h1>
-        </div>    
+            <h1>Welcome To TCS Learning</h1>
         </div>
-        <div class="work3">
-            <div class="work4">
-                <img src="../views/background1.jpg" alt="">
-                <img src="../views/background2.jpg" alt="">
-                <img src="../views/background3.jpg" alt="">
-            </div>
-        </div>
-       
+
+        <!-- User Interaction Section -->
         <div class="work5">
-            <%if (status == "loggedIn"){ %>
-    
-                <p style="color:rgb(40, 238, 60);font-family: poppins; font-size: xx-large;">Welcome <%= user.username%></p>
-                <%}%>
-            <p>This is a learning site for Computer Science Students.lecture notes and past papers of Trincomalee Campus,EUSL are available here.</p>
-            <div>
-                <%if (status == "loggedIn"){ %>
-                <a href="../public/mainProfile.html"><button class="profile-btn"><span></span>PROFILE</button></a>
-                <a href="logout"> <button class="logout-btn"><span></span>LOGOUT</button></a>
-                <%} else{%>
-                <a href="/public/login.html"><button class="login-btn"><span></span>LOGIN</button></a>
-               <a href="/public/signup.html"> <button class="signup-btn"><span></span>SIGN UP</button></a>
-               <%}%>
+            <% if (status === "loggedIn") { %>
+                <p class="welcome-message">Welcome <%= user.username %></p>
+            <% } %>
+            <p>This is a learning site for Computer Science Students. Lecture notes and past papers of Trincomalee Campus, EUSL are available here. Additionally, users can add and share their notes with others.</p>
+            
+            <div class="button-group">
+                <% if (status === "loggedIn") { %>
+                    <a href="../public/mainProfile.html"><button class="profile-btn"><span></span>PROFILE</button></a>
+                    <a href="logout"><button class="logout-btn"><span></span>LOGOUT</button></a>
+                <% } else { %>
+                    <a href="/public/login.html"><button class="login-btn"><span></span>LOGIN</button></a>
+                    <a href="/public/signup.html"><button class="signup-btn"><span></span>SIGN UP</button></a>
+                <% } %>
             </div>
         </div>
     </div>
-    
 </body>
 </html>
