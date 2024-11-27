@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup page</title>
+<link rel="stylesheet" href="/public/css/signstyle.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+/* Your existing styles here */
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c3dffe;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+img {
+    width: 300px;
+    margin-left: 100px;
+    margin-right: 50px;   
+}
+
+#slogan {
+    font-family: poppins;
+    font-size: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    margin-left: 10px;
+}
+
+span {
+    border-right: 0.05em solid;
+    animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+}
+
+.content {
+    background-color: #ffffff;
+    margin-left: 100px;
+    padding: 20px 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.6);
+    width: 350px;
+    font-family: poppins;
+}
+
+.input-box {
+    margin-bottom: 15px;
+    padding-right: 20px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    outline: none;
+    font-family: poppins;
+    text-indent: 10px;
+}
+
+.male-female {
+    display: flex;
+    gap: 10px;
+}
+
+.birth-day input[type="date"] {
+    width: 280px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    outline: none;
+    font-family: poppins;
+    text-indent: 5px;
+}
+
+.form1 .btn {
+    background-color: #3793f5;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    width: 300px;
+    transition: all 0.8ms ease;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.form1 .btn:hover {
+    background-color: #007bff;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.navbar i {
+    font-size: xx-large;
+}
+
+.navbar .nav-link {
+    font-size: larger;
+    font-family: poppins;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border: 2px solid rgb(36, 33, 232);
+    transition: all 0.8s ease;
+}
+
+.navbar .nav-link:active {
+    transform: scale(0.90);
+}
+
+.navbar .nav-link:hover {
+    background: #4688eb;
+}
+
+/* Password strength meter styles */
+.password-strength-meter {
+    margin-top: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    background-color: #ff0000; /* Default color */
+}
+
+</style>
+</head>
+<body>
+<!-- Your existing HTML content here -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class='bx bxs-home'></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="./login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+<div class="content">
+  <div id="h2">
+    <h2>Sign Up</h2>
+  </div>
+  <div class="form1">
+    <form onsubmit="return false;" id="form">
+      <div class="input-box">
+        <input type="text" placeholder="Username" id="username">
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Email" id="email">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" id="password" onkeyup="checkPasswordStrength()">
+      </div>
+      <div class="password-strength-meter">
+        <div class="password-strength-bar" id="password-strength-bar"></div>
+      </div>
+      <div class="male-female">
+        <label for="maleFemale">Male</label><input type="radio" name="maleFemale" value="Male">
+        <label for="maleFemale">Female</label><input type="radio" name="maleFemale" value="Female">
+      </div>
+      <br>
+      <div class="alert alert-danger" role="alert" id="error" style="display: none;"></div>
+      <div class="alert alert-success" role="alert" id="success" style="display: none;"></div>
+      <button type="submit" class="btn" id="log">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<img src="./photo1.png" alt="">
+<h1 id="slogan">To become<br>a part of<br>our community,<br>Please sign up<br>using your<br>personal <br>information...</h1>
+
+<script src="./js/Script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById("form");
+  var passwordInput = document.getElementById("password");
+  var passwordStrengthBar = document.getElementById("password-strength-bar");
+  var signUpButton = document.getElementById("log");
+  var alertDiv = document.getElementById("error");
+
+  passwordStrengthBar.style.width = "0%";
+  passwordStrengthBar.style.backgroundColor = "#ddd"; 
+  signUpButton.disabled = true;
+
+  function checkPasswordStrength() {
+    var password = passwordInput.value;
+    var strength = 0;
+
+    // Define conditions for password strength
+    if (password.length >= 8) {
+      strength += 1; // Length check
+    }
+
+    if (password.match(/[A-Z]/)) {
+      strength += 1; // Uppercase letter check
+    }
+
+    if (password.match(/[a-z]/)) {
+      strength += 1; // Lowercase letter check
+    }
+
+    if (password.match(/[0-9]/)) {
+      strength += 1; // Numeric character check
+    }
+
+    if (password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/)) {
+      strength += 1; // Special character check
+    }
+
+    var strengthPercentage = (strength / 5) * 100;
+
+    // Set the strength bar width and color based on strength
+    passwordStrengthBar.style.width = strengthPercentage + "%";
+
+    if (strengthPercentage < 60) { // Consider < 60% as weak
+      passwordStrengthBar.style.backgroundColor = "#ff0000"; // Red
+      signUpButton.disabled = true; // Disable signup button
+      alertDiv.style.display = "block";
+      alertDiv.textContent = "Password is too weak. Include upper/lowercase letters, numbers, and special characters.";
+    } else if (strengthPercentage < 80) { // Consider 60%-79% as moderate
+      passwordStrengthBar.style.backgroundColor = "#ffcc00"; // Yellow
+      signUpButton.disabled = false; // Enable signup button
+      alertDiv.style.display = "none";
+    } else { // Consider >= 80% as strong
+      passwordStrengthBar.style.backgroundColor = "#00cc00"; // Green
+      signUpButton.disabled = false; // Enable signup button
+      alertDiv.style.display = "none";
+    }
+  }
+
+  // Attach the keyup event listener to the password input to check the password as the user types
+  passwordInput.addEventListener("keyup", checkPasswordStrength);
+
+  // Optional: Handle form submission
+  form.addEventListener("submit", function (event) {
+    if (signUpButton.disabled) {
+      event.preventDefault(); // Prevent form submission if the password is too weak
+      alert("Password is too weak to sign up. Please enter a stronger password.");
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

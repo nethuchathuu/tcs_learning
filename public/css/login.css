@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+;
+
+body {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #c3dffe;
+}
+
+.cont{
+    display:flex;
+    background-color: #ffffff;
+    margin-left: 100px;
+    padding: 20px 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    width: 350px;
+    font-family: poppins;
+    
+}
+img{
+
+    width:300px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+
+#slogan{
+    font-family: poppins;
+    font-size:50px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto;/* Centers the text horizontally */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    margin-left: 10px;
+    
+}
+span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+
+.cont h2{
+    font-size: 200%;
+    text-align: center;
+    font-family:poppins;
+}
+.cont .input-box{
+    margin-bottom: 15px;
+    padding-right: 20px;
+    margin: 30px 0;
+}
+.cont .input-box input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    outline: none;
+    font-family: poppins;
+    text-indent: 10px;
+}
+.input-box input::placeholder{
+    color:#000000;
+}
+
+.input-box i{
+    position:relative;
+    right: -90%;
+    top: 17px;
+    transform: translateY(-50px);
+    font-size: 20px;
+    
+}
+
+.cont .remember-forgot{
+
+    display:flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin:  -15px 0 15px;
+    font-family: poppins;
+}
+.cont .remember-forgot .check{
+    display:inline;
+}
+
+.remember-forgot label input{
+    accent-color: #000000;
+    margin-right: 5px;
+}
+
+.remember-forgot a{
+    color:#000000;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.cont .btn {
+    background-color: #3793f5 ;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    width: 300px;
+    transition: all 0.8ms ease;
+
+}
+.btn:active{
+transform: scale(0.96);
+}
+
+.btn:hover{
+    background: #4688eb;
+}
+.cont .register-link{
+
+    font-size: 14.5px;
+    text-align: center;
+    margin:20px 0 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-link p a{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+
+    text-decoration: underline;
+}

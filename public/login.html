@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Login page</title>
+    <style>
+        body{
+            background-color: #c3dffe;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+        .navbar i{
+            font-size: xx-large;
+        }
+        .navbar .nav-link {
+            font-size: larger;
+            font-family:poppins;
+            font-weight: 500;
+            background: transparent;
+            border:none;
+            outline:none;
+            border-radius: 10px;
+            margin-top: 5px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            flex-direction: row;
+            width:120px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            border:2px solid rgb(36, 33, 232);
+            transition: all 0.8s ease;
+        }
+
+        .navbar .nav-link:active{
+            transform: scale(0.90);
+
+        }
+        .navbar .nav-link:hover {
+            background: #4688eb;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class='bx bxs-home'></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./signup.html">Signup</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <section>
+        <div class="cont">
+                <form onsubmit="return false;" id="form">
+                    <h2>Login</h2>
+                    <div class="input-box">
+                        <input type="text" placeholder="email" id="email" required>
+                        <i class='bx bxs-user-circle'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" id="password"required>
+                        <i class='bx bxs-lock-alt' ></i>
+                    </div>
+                    <div class="remember-forgot">
+                        <span class="check">
+                        <input type="checkbox"> <label>Remember me </label>
+                    </span>  
+                            <a href="#">Forgot Password?</a>
+                        
+                    </div>
+                    <div class="alert alert-danger" role="alert" id="error" style="display: none"></div>
+                    <div class="alert alert-success" role="alert" id="success" style="display: none"></div>
+                    <button type="submit" class="btn">Login</button>
+
+                    <div class="register-link">
+                        <p>Don't have an account? <a href="./signup.html">Signup</a></p>
+                    </div>
+                </form>
+
+            </div> 
+    </section>
+
+    <img src="./photo1.png" alt="">
+    <h1 id="slogan">To become<br>a part of<br>our community,<br>Please sign up<br>using your<br>personal <br>information...</h1>
+       
+    <script src="/public/js/login.js"></script>
+
+</body>
+</html>
