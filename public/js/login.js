@@ -24,3 +24,22 @@ form.addEventListener("submit", () => {
             }
         })
  })
+ const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("toggle-password");
+
+togglePassword.addEventListener("click", () => {
+    if (passwordInput.type === "password") {
+        // Show the password and display the "cut-eye" icon
+        passwordInput.type = "text";
+        togglePassword.classList.remove("bx-hide");
+        togglePassword.classList.add("bx-show");
+    } else {
+        // Hide the password and display the "eye" icon
+        passwordInput.type = "password";
+        togglePassword.classList.remove("bx-show");
+        togglePassword.classList.add("bx-hide");
+    }
+});
+
+
+
